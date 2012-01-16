@@ -2,7 +2,7 @@ javascript-configuration
 ========================
 
 javascript-configuration is a Django application that provides
-way of passing settings for Django applications to JavaScript.
+a way of passing settings for Django applications to JavaScript.
 
 Installation
 ------------
@@ -10,7 +10,7 @@ Installation
 Package
 _______
 
-javascript-configuration can be installet as normal Python package.
+javascript-configuration can be installed as a normal Python package.
 
 Example instalation for pip::
 
