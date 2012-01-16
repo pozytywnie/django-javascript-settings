@@ -14,8 +14,6 @@ setup(
     maintainer_email="tomasz@wysocki.info",
     install_requires=(
         'django',
-        'django-component',
-        'django-package-installer',
     ),
     packages=[
         'javascript_configuration',
