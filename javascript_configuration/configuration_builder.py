@@ -26,4 +26,4 @@ class ConfigurationBuilder:
             self.configuration = self.fetch()
         return self.configuration
 
-DEFAULT_CONFIGURATION_BULDIER = ConfigurationBuilder()
+DEFAULT_CONFIGURATION_BUILDER = ConfigurationBuilder()
