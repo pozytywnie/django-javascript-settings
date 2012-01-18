@@ -7,7 +7,7 @@ def read(name):
 
 setup(
     name='javascript-configuration',
-    description="javascript-configuration is a Django application that provides way of passing settings for Django applications to JavaScript.",
+    description="javascript-configuration is a Django application that provides a way of passing settings for Django applications to JavaScript.",
     long_description=read("README.rst"),
     version='1.1.2',
     maintainer="Tomasz Wysocki",
