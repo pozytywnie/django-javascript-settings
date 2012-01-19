@@ -1,6 +1,6 @@
 import sys
 
-from django.conf import settings
+from javascript_configuration import settings
 
 class ConfigurationBuilder:
     """
@@ -11,13 +11,12 @@ class ConfigurationBuilder:
 
     def fetch(self):
         configuration = {}
-        for app in settings.INSTALLED_APPS:
+        for app_name, module_name in settings.SCAN_MODULES.iter_items():
             try:
-                module_name = app + '.urls'
                 __import__(module_name)
                 urls = sys.modules[module_name]
                 if hasattr(urls, 'javascript_configuration'):
-                    configuration[app.split('.')[-1]] = urls.javascript_configuration()
+                    configuration[app_name] = urls.javascript_configuration()
             except ImportError:
                 pass
         return configuration
