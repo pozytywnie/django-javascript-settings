@@ -34,23 +34,13 @@ Add javascript-configuration to INSTALLED_APPS::
         ...
     )
 
-urls.py
-_______
-
-Add javascript-configuration to urlpatterns::
-
-    urlpatterns = patterns('',
-        ...
-        (r'^javascript_configuration/', include('javascript_configuration.urls')),
-        ...
-    )
-
 template
 ________
 
-Add javascript-configuration to your main template::
+Add javascript-configuration tag to your main template::
 
-    <script type="text/javascript" src="{% url javascript-configuration %}"></script>
+    {% load javascript_configuration_tags %}
+    <script type="text/javascript">{% javascript-configuration %}</script>
 
 Usage
 -----
@@ -59,7 +49,34 @@ Configuration is defined by adding ``javascript_configuration`` function to urls
 ``javascript_configuration`` should take no arguments and return json-serializable object.
 Serialized object is then avaliable in Javascript as ``configuration['app_name']``.
 
+If you want to place ``javascript_configuration`` in different location, then you can
+define ``JAVASCRIPT_CONFIGURATION_SCAN_MODULES`` as a dictionary of ``'app_name': 'module_location'``.
+
 Example
 -------
 
-TODO
+Template::
+
+    {% load javascript_configuration_tags %}
+    <script type="text/javascript">{% javascript_configuration %}</script>
+
+urls.py in an app::
+
+    def javascript_configuration():
+        js_conf = {
+                'page_title': 'Home',
+                'page_version': '1.9.20',
+                'css': {
+                    'white': './css/white.css',
+                    'black': './css/black.css',
+                    'print': './css/print.css',
+                },
+                'default_css': 'white',
+        }
+        return js_conf
+
+For example the app is named "home".
+
+Result::
+
+    <script type="text/javascript">var configuration = {'home': {'page_title': 'Home', 'page_version': '1.9.20', 'css': {'white': './css/white.css', 'black': './css/black.css', 'print': './css/print.css'}, 'default_css': 'white'}};</script>
