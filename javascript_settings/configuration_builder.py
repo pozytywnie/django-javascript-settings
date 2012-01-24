@@ -1,6 +1,6 @@
 import sys
 
-from javascript_configuration import settings
+from javascript_settings import settings
 
 class ConfigurationBuilder:
     """
@@ -15,8 +15,8 @@ class ConfigurationBuilder:
             try:
                 __import__(module_name)
                 urls = sys.modules[module_name]
-                if hasattr(urls, 'javascript_configuration'):
-                    configuration[app_name] = urls.javascript_configuration()
+                if hasattr(urls, 'javascript_settings'):
+                    configuration[app_name] = urls.javascript_settings()
             except ImportError:
                 pass
         return configuration

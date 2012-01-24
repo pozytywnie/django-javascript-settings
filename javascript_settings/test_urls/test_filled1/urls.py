@@ -1,6 +1,6 @@
 
 
-def javascript_configuration():
+def javascript_settings():
     """
     Testing object for javascript-configuration module.
     """

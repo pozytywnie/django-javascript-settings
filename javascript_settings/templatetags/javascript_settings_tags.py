@@ -2,13 +2,13 @@ from django import template
 from django.utils import simplejson
 
 
-from javascript_configuration.configuration_builder import DEFAULT_CONFIGURATION_BUILDER
+from javascript_settings.configuration_builder import DEFAULT_CONFIGURATION_BUILDER
 
 
 register = template.Library()
 
-@register.tag(name='javascript_configuration')
-def do_javascript_configuration(parser, token):
+@register.tag(name='javascript_settings')
+def do_javascript_settings(parser, token):
     """
         Returns a node with generated configuration.
     """

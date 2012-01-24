@@ -13,11 +13,11 @@ if not settings.configured:
             }
         },
         INSTALLED_APPS = (
-            'javascript_configuration',
+            'javascript_settings',
         ),
     )
 
 from django.core.management import call_command
 
-call_command('test', 'javascript_configuration')
+call_command('test', 'javascript_settings')
 
