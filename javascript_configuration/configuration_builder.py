@@ -11,7 +11,7 @@ class ConfigurationBuilder:
 
     def fetch(self):
         configuration = {}
-        for app_name, module_name in settings.SCAN_MODULES.iter_items():
+        for app_name, module_name in settings.SCAN_MODULES.iteritems():
             try:
                 __import__(module_name)
                 urls = sys.modules[module_name]
