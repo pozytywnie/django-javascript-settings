@@ -12,7 +12,7 @@ setup(
                  "provides a way of passing settings for Django applications "
                  "to JavaScript."),
     long_description=read("README.rst"),
-    version='1.0.2',
+    version='1.1.0',
     maintainer="Tomasz Wysocki",
     maintainer_email="tomasz@wysocki.info",
     install_requires=(
