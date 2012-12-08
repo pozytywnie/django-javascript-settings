@@ -53,7 +53,7 @@ Option 1: Import
 
 Add javascript-settings.js to script imports::
 
-    <script type="text/javascript" src="javascript-settings.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}javascript-settings.js"></script>
 
 Option 2: Template tag
 ++++++++++++++++++++++
@@ -78,7 +78,7 @@ Example
 
 Template::
 
-    <script type="text/javascript" src="javascript-settings.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}javascript-settings.js"></script>
 
 urls.py in an app "home"::
 
