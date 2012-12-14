@@ -2,7 +2,8 @@ javascript-settings
 ========================
 
 javascript-settings is a Django application that provides
-a way of passing settings for Django applications to JavaScript.
+a way of passing values backend from Django applications
+to JavaScript in templates.
 
 Installation
 ------------
@@ -34,8 +35,28 @@ Add javascript-settings to INSTALLED_APPS::
         ...
     )
 
+Add javascript-settings.finders to STATICFILES_FINDERS::
+
+    STATICFILES_FINDERS = (
+        ...
+        'javascript_settings.finders',
+        ...
+    )
+
 template
 ________
+
+You can use one of following ways to pass gathered data to template:
+
+Option 1: Import
+++++++++++++++++
+
+Add javascript-settings.js to script imports::
+
+    <script type="text/javascript" src="{{ STATIC_URL }}javascript-settings.js"></script>
+
+Option 2: Template tag
+++++++++++++++++++++++
 
 Add javascript-settings tag to your main template::
 
@@ -57,10 +78,9 @@ Example
 
 Template::
 
-    {% load javascript_settings_tags %}
-    <script type="text/javascript">{% javascript_settings %}</script>
+    <script type="text/javascript" src="{{ STATIC_URL }}javascript-settings.js"></script>
 
-urls.py in an app::
+urls.py in an app "home"::
 
     def javascript_settings():
         js_conf = {
@@ -75,8 +95,6 @@ urls.py in an app::
         }
         return js_conf
 
-For example the app is named "home".
+Result in file javascript-settings.js::
 
-Result::
-
-    <script type="text/javascript">var configuration = {'home': {'page_title': 'Home', 'page_version': '1.9.20', 'css': {'white': './css/white.css', 'black': './css/black.css', 'print': './css/print.css'}, 'default_css': 'white'}};</script>
+    var configuration = {'home': {'page_title': 'Home', 'page_version': '1.9.20', 'css': {'white': './css/white.css', 'black': './css/black.css', 'print': './css/print.css'}, 'default_css': 'white'}};

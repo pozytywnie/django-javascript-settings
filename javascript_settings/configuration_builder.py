@@ -2,9 +2,11 @@ import sys
 
 from javascript_settings import settings
 
+
 class ConfigurationBuilder:
     """
-        Get javascript configurations from urls.py files from all installed apps.
+        Get javascript configurations from urls.py files from
+        all installed apps.
     """
     def __init__(self):
         self.configuration = None

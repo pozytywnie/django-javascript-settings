@@ -3,21 +3,19 @@
 import os
 
 from django.conf import settings
+from django.core.management import call_command
 
 if not settings.configured:
     settings.configure(
-        DATABASES = {
+        DATABASES={
             'default': {
                 'ENGINE': 'django.db.backends.sqlite3',
                 'NAME': ':memory:',
             }
         },
-        INSTALLED_APPS = (
+        INSTALLED_APPS=(
             'javascript_settings',
         ),
     )
 
-from django.core.management import call_command
-
 call_command('test', 'javascript_settings')
-
