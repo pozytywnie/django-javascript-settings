@@ -39,7 +39,7 @@ Add javascript-settings.finders to STATICFILES_FINDERS::
 
     STATICFILES_FINDERS = (
         ...
-        'javascript_settings.finders',
+        'javascript_settings.finders.JavascriptSettingsFinder',
         ...
     )
 
