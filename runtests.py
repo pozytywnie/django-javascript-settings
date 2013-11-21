@@ -1,21 +1,9 @@
-# Based on: https://github.com/zsiciarz/django-envelope/blob/master/runtests.py
+import javascript_settings
 
-import os
 
-from django.conf import settings
-from django.core.management import call_command
+def main():
+    javascript_settings.runtests()
 
-if not settings.configured:
-    settings.configure(
-        DATABASES={
-            'default': {
-                'ENGINE': 'django.db.backends.sqlite3',
-                'NAME': ':memory:',
-            }
-        },
-        INSTALLED_APPS=(
-            'javascript_settings',
-        ),
-    )
+if __name__ == '__main__':
+    main()
 
-call_command('test', 'javascript_settings')
