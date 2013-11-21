@@ -83,17 +83,16 @@ Template::
 urls.py in an app "home"::
 
     def javascript_settings():
-        js_conf = {
-                'page_title': 'Home',
-                'page_version': '1.9.20',
-                'css': {
-                    'white': './css/white.css',
-                    'black': './css/black.css',
-                    'print': './css/print.css',
-                },
-                'default_css': 'white',
+        return {
+            'page_title': 'Home',
+            'page_version': '1.9.20',
+            'css': {
+                'white': './css/white.css',
+                'black': './css/black.css',
+                'print': './css/print.css',
+            },
+            'default_css': 'white',
         }
-        return js_conf
 
 Result in file javascript-settings.js::
 
