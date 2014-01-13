@@ -15,11 +15,11 @@ javascript-settings can be installed as a normal Python package.
 
 Example instalation for pip::
 
-    $ pip install javascript-settings
+    $ pip install django-javascript-settings
 
 Example instalation from file::
 
-    $ pip install javascript-settings-1.1.tar.gz
+    $ pip install django-javascript-settings-1.1.tar.gz
 
 Configuration
 -------------
