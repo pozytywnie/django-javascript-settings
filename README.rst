@@ -1,5 +1,5 @@
 javascript-settings
-========================
+===================
 
 javascript-settings is a Django application that provides
 a way of passing values backend from Django applications
