@@ -1,6 +1,9 @@
 javascript-settings
 ===================
 
+.. image:: https://travis-ci.org/pozytywnie/django-javascript-settings.svg
+   :target: https://travis-ci.org/pozytywnie/django-javascript-settings
+
 javascript-settings is a Django application that provides
 a way of passing values backend from Django applications
 to JavaScript in templates.
