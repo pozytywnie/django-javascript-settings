@@ -1,5 +1,6 @@
+import json
+
 from django import template
-from django.utils import simplejson
 
 from javascript_settings.configuration_builder import \
     DEFAULT_CONFIGURATION_BUILDER
@@ -26,6 +27,6 @@ class JavascriptConfigurationNode(template.Node):
         """
             Renders JS configuration.
         """
-        return 'var configuration = ' + simplejson.dumps(
+        return 'var configuration = ' + json.dumps(
             DEFAULT_CONFIGURATION_BUILDER.get_configuration()
         ) + ';'
